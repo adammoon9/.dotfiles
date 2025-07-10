@@ -1,0 +1,14 @@
+[general]
+import = [ "/home/adam/.config/alacritty/themes/themes/rose_pine.toml",]
+
+[window]
+opacity = 0.93
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
+[font]
+size = 15.0
+
+[window.padding]
+x = 10
+y = 10

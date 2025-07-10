@@ -47,9 +47,28 @@ require("lazy").setup({
 	},
 	{ 'tpope/vim-fugitive' },
 	{ 'mbbill/undotree' },
-	-- spec = {
-    -- import your plugins
-   -- { import = "plugins" },
-  -- },
-  checker = { enabled = true },
+    {
+      "williamboman/mason.nvim",
+      dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+      },
+      config = function()
+        require("mason").setup()
+        require("mason-lspconfig").setup({
+          ensure_installed = {
+            "pyright",
+            "jinja_lsp",
+            "html",
+            "cssls",
+            "emmet_ls",
+          },
+        })
+      end
+    },
+    {"hrsh7th/nvim-cmp"},
+    {"hrsh7th/cmp-nvim-lsp"},
+    {"saadparwaiz1/cmp_luasnip"},
+    {"L3MON4D3/LuaSnip"},
+    checker = { enabled = true },
 })

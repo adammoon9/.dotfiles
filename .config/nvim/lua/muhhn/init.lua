@@ -1,3 +1,10 @@
-require('muhhn.set')
-require('muhhn.remap')
-require('muhhn.lazy-nvim')
+local modules = {
+    'muhhn.set',
+    'muhhn.remap',
+    'muhhn.lazy-nvim',
+    'muhhn.lsp'
+}
+
+for _, m in ipairs(modules) do
+    require(m)
+end
